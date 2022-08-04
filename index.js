@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 var app = express();
 
 var url =
-  "mongodb+srv://pranavkumarshop:pranavkumar@cluster0.rk2ol.mongodb.net/suman-santosh-homes?retryWrites=true&w=majority";
+  `mongodb+srv://pranavkumarshop:pranavkumar@cluster0.rk2ol.mongodb.net/${ process.env.NODE_ENV === 'production' ? 'suman-santosh-homes-prod' : 'suman-santosh-homes'}?retryWrites=true&w=majority`;
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 const con = mongoose.connection
