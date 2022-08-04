@@ -117,6 +117,6 @@ app.use(function (err, req, res, next) {
 });
 
 
-app.listen(3001, ()=>{
+app.listen(process.env.PORT || 3001, ()=>{
     console.log("Server Listinging at 3001")
 })
